@@ -24,7 +24,17 @@ export default class LifecyleMethods extends React.Component {
 
     buttonOnClickHandler = () => {
         console.log("buttonOnClickHandler");
-        this.setState({ count: this.state.count + 1 });
+        this.setState({ count: this.state.count + 1 }, () => {
+            console.log("setState callback method")
+        });
+        console.log("post setState buttonOnClickHandler");
+    }
+
+    static getDerivedStateFromProps(props, state) {
+        console.log("getDerivedStateFromProps");
+        console.log("props", props);
+        console.log("state", state);
+        return state;
     }
 
     render() {
