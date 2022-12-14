@@ -7,7 +7,6 @@ export default class LifecyleMethods extends React.Component {
         this.state = {
             count: 1
         }
-        this.buttonOnClickHandler = this.buttonOnClickHandler.bind(this);
         console.log("Constructor\n");
     }
 
@@ -23,9 +22,9 @@ export default class LifecyleMethods extends React.Component {
         console.log("componentWillUnmount")
     }
 
-    buttonOnClickHandler() {
+    buttonOnClickHandler = () => {
         console.log("buttonOnClickHandler");
-        this.setState({ count: this.state.count++ });
+        this.setState({ count: this.state.count + 1 });
     }
 
     render() {
